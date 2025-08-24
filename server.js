@@ -95,9 +95,10 @@ const StoryRes = z.object({
 /* ---------- helpers ---------- */
 function sendSSEHeaders(res) {
   res.writeHead(200, {
-    "Content-Type": "text/event-stream",
-    "Cache-Control": "no-cache",
+    "Content-Type": "text/event-stream; charset=utf-8",
+    "Cache-Control": "no-cache, no-transform",
     "Connection": "keep-alive",
+    "X-Accel-Buffering": "no" // prevents some proxies from buffering
   });
 }
 
@@ -236,7 +237,17 @@ app.use((error, req, res, next) => {
 });
 
 /* ---------- start server ---------- */
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  log.info(`Server running on port ${PORT}`);
+// --- harden process lifecycle logging ---
+process.on("unhandledRejection", (reason) => {
+  console.error("UnhandledRejection:", reason);
+});
+process.on("uncaughtException", (err) => {
+  console.error("UncaughtException:", err);
+});
+
+// --- start (Railway) ---
+const PORT = Number(process.env.PORT || 0);
+const HOST = "0.0.0.0";
+app.listen(PORT, HOST, () => {
+  log.info(`Server running on http://${HOST}:${PORT}`);
 });
