@@ -11,7 +11,6 @@ import { z } from "zod";
 /* ---------- setup ---------- */
 const log = pino({ level: process.env.LOG_LEVEL || "info" });
 const app = express();
-
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors({ origin: true }));
 app.use(compression());
@@ -72,9 +71,9 @@ const StoryReq = z.object({
   characters: z.array(z.any()).default([]),
   moral: z.string().default("Curiosity + safety"),
   educational_goals: z.array(z.string()).default([
-    "Basic volcano structure",
-    "Safety around volcanoes",
-    "Scientific observation",
+    "Basic volcano formation",
+    "Safety around natural phenomena",
+    "Scientific observation skills",
   ]),
 });
 
@@ -82,15 +81,15 @@ const StoryRes = z.object({
   title: z.string(),
   opening: z.string(),
   scenes: z.array(z.object({
-    description: z.string(),
+    setting: z.string(),
+    action: z.string(),
     dialogue: z.string(),
-    visual_notes: z.string(),
-    duration_seconds: z.number(),
+    duration: z.number(),
   })),
   closing: z.string(),
+  moral: z.string(),
+  educational_goals: z.array(z.string()),
   total_duration: z.number(),
-  educational_points: z.array(z.string()),
-  safety_notes: z.array(z.string()),
 });
 
 /* ---------- helpers ---------- */
@@ -105,8 +104,7 @@ function sendSSEHeaders(res) {
 function safeParseJSON(str) {
   try {
     return JSON.parse(str);
-  } catch (e) {
-    log.warn("Failed to parse JSON:", str);
+  } catch {
     return null;
   }
 }
@@ -127,17 +125,118 @@ app.get("/__selfcheck", (req, res) => {
 
 app.post("/api/character", async (req, res) => {
   try {
-    const body = safeParseJSON(req.body);
-    if (!body) {
-      return res.status(400).json({ error: "Invalid JSON" });
-    }
-
-    const validated = CharacterReq.parse(body);
+    const body = CharacterReq.parse(req.body);
     const openaiClient = getOpenAI();
-
+    
     const completion = await openaiClient.chat.completions.create({
       model: MODEL,
       messages: [
         {
           role: "system",
-          content: `You are a STEM character designer. Create engaging, educat
+          content: `You are a character designer for STEM education. Create original, engaging characters that inspire curiosity about science, technology, engineering, and math.`,
+        },
+        {
+          role: "user",
+          content: `Design a character with these requirements: ${body.prompt}. Target audience: ${body.audience}. Style: ${body.style}. Constraints: ${body.constraints}`,
+        },
+      ],
+      response_format: { type: "json_object" },
+    });
+
+    const content = completion.choices[0].message.content;
+    const parsed = safeParseJSON(content);
+    
+    if (!parsed) {
+      throw new Error("Failed to parse OpenAI response");
+    }
+
+    const result = CharacterRes.parse(parsed);
+    res.json(result);
+  } catch (error) {
+    log.error({ error: error.message }, "Character generation failed");
+    res.status(500).json({ error: "Character generation failed", details: error.message });
+  }
+});
+
+app.post("/api/story", async (req, res) => {
+  try {
+    const body = StoryReq.parse(req.body);
+    const openaiClient = getOpenAI();
+    
+    const completion = await openaiClient.chat.completions.create({
+      model: MODEL,
+      messages: [
+        {
+          role: "system",
+          content: `You are a storyteller for STEM education. Create engaging, educational stories that make complex concepts accessible to children.`,
+        },
+        {
+          role: "user",
+          content: `Create a story about ${body.topic} for ages ${body.target_age}. Duration: ${body.minutes} minutes. Include these characters: ${body.characters.join(", ")}. Moral: ${body.moral}. Educational goals: ${body.educational_goals.join(", ")}`,
+        },
+      ],
+      response_format: { type: "json_object" },
+    });
+
+    const content = completion.choices[0].message.content;
+    const parsed = safeParseJSON(content);
+    
+    if (!parsed) {
+      throw new Error("Failed to parse OpenAI response");
+    }
+
+    const result = StoryRes.parse(parsed);
+    res.json(result);
+  } catch (error) {
+    log.error({ error: error.message }, "Story generation failed");
+    res.status(500).json({ error: "Story generation failed", details: error.message });
+  }
+});
+
+app.post("/api/ask", async (req, res) => {
+  try {
+    const { question } = req.body;
+    if (!question) {
+      return res.status(400).json({ error: "Question is required" });
+    }
+
+    const openaiClient = getOpenAI();
+    sendSSEHeaders(res);
+
+    const stream = await openaiClient.chat.completions.create({
+      model: MODEL,
+      messages: [
+        {
+          role: "system",
+          content: "You are a friendly STEM tutor for kids. Keep answers simple, engaging, and age-appropriate.",
+        },
+        { role: "user", content: question },
+      ],
+      stream: true,
+    });
+
+    for await (const chunk of stream) {
+      const content = chunk.choices[0]?.delta?.content;
+      if (content) {
+        res.write(`data: ${JSON.stringify({ content })}\n\n`);
+      }
+    }
+    res.write("data: [DONE]\n\n");
+    res.end();
+  } catch (error) {
+    log.error({ error: error.message }, "Ask endpoint failed");
+    res.status(500).json({ error: "Ask endpoint failed", details: error.message });
+  }
+});
+
+/* ---------- error handling ---------- */
+app.use((error, req, res, next) => {
+  log.error({ error: error.message, stack: error.stack }, "Unhandled error");
+  res.status(500).json({ error: "Internal server error" });
+});
+
+/* ---------- start server ---------- */
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  log.info(`Server running on port ${PORT}`);
+});
