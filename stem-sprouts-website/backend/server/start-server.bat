@@ -1,0 +1,4 @@
+@echo off
+set OPENAI_API_KEY=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
+"C:\Program Files\nodejs\node.exe" server.js
+pause 
