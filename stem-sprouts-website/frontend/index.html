@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Sprouts | AI-Powered Parenting for Toddlers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        'primary': '#4F46E5',
+                        'secondary': '#10B981',
+                        'accent': '#F59E0B',
+                        'dark': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="font-body bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center space-x-2">
+                        <i class="fas fa-seedling text-2xl text-secondary"></i>
+                        <span class="text-xl font-display font-bold text-dark">STEM Sprouts</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#activities" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Activities</a>
+                        <a href="#resources" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Resources</a>
+                        <a href="#learning-materials" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Learning Materials</a>
+                        <a href="#ai-assistant" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">AI Assistant</a>
+                        <a href="#stem-video-assistant" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Video Creator</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                        <a href="#" id="profile-link" class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors hidden">
+                            <i class="fas fa-user-circle mr-1"></i>Profile
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary">Home</a>
+                <a href="#activities" class="block px-3 py-2 text-gray-700 hover:text-primary">Activities</a>
+                <a href="#resources" class="block px-3 py-2 text-gray-700 hover:text-primary">Resources</a>
+                <a href="#learning-materials" class="block px-3 py-2 text-gray-700 hover:text-primary">Learning Materials</a>
+                <a href="#ai-assistant" class="block px-3 py-2 text-gray-700 hover:text-primary">AI Assistant</a>
+                <a href="#stem-video-assistant" class="block px-3 py-2 text-gray-700 hover:text-primary">Video Creator</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">About</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-display font-bold mb-6">STEM Sprouts</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">AI-powered STEM activities for toddlers ages 6 months to 8 years</p>
+            <div class="mb-12">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1470&q=80" alt="Parent and child doing STEM activity" class="rounded-xl shadow-xl w-full max-w-4xl h-auto mx-auto">
+            </div>
+            <p class="text-lg text-gray-100 max-w-3xl mx-auto mb-8">Our AI assistant curates personalized STEM activities and parenting resources to help your child blossom</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#ai-assistant" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-robot mr-2"></i>Try AI Assistant
+                </a>
+                <a href="#activities" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors">
+                    <i class="fas fa-flask mr-2"></i>Explore Activities
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Child Setup Section -->
+    <section id="child-setup" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <div class="text-4xl mb-4">👶</div>
+                    <h2 class="text-3xl font-display font-bold text-dark mb-4">Personalize Your Experience</h2>
+                    <p class="text-lg text-gray-600">Tell us about your child to unlock personalized STEM activities and immersive learning experiences</p>
+                </div>
+
+                <form id="child-setup-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="child-name" class="block text-sm font-medium text-gray-700 mb-2">Child's Name</label>
+                            <input type="text" id="child-name" name="child-name" required 
+                                   placeholder="Enter your child's name" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="child-age" class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                            <select id="child-age" name="child-age" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Select age</option>
+                                <option value="6-12 months">6-12 months</option>
+                                <option value="1-2 years">1-2 years</option>
+                                <option value="2-3 years">2-3 years</option>
+                                <option value="3-4 years">3-4 years</option>
+                                <option value="4-5 years">4-5 years</option>
+                                <option value="5-6 years">5-6 years</option>
+                                <option value="6-7 years">6-7 years</option>
+                                <option value="7-8 years">7-8 years</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="child-interests" class="block text-sm font-medium text-gray-700 mb-2">Interests (Optional)</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="animals" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🐾 Animals</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="space" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🚀 Space</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="nature" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🌿 Nature</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="machines" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">⚙️ Machines</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="water" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">💧 Water</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="colors" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🎨 Colors</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="music" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🎵 Music</span>
+                            </label>
+                            <label class="flex items-center space-x-2 cursor-pointer">
+                                <input type="checkbox" name="interests" value="building" class="text-primary focus:ring-primary">
+                                <span class="text-sm text-gray-700">🏗️ Building</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-magic mr-2"></i>Start Personalized Experience
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Personalized Welcome Message (Hidden by default) -->
+                <div id="personalized-welcome" class="hidden mt-8 p-6 bg-gradient-to-r from-primary to-secondary rounded-xl text-white">
+                    <div class="text-center">
+                        <div class="text-3xl mb-3">🎉</div>
+                        <h3 class="text-xl font-bold mb-2">Welcome, <span id="welcome-child-name"></span>!</h3>
+                        <p class="text-blue-100">Your personalized STEM journey is ready. Explore activities tailored just for you!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Activities Section -->
+    <section id="activities" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">
+                    <span id="personalized-activities-title">Daily STEM Activities</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <span id="personalized-activities-subtitle">Try these AI-recommended STEM activities with your child today</span>
+                </p>
+                <div id="personalized-greeting" class="hidden mt-4 p-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white">
+                    <p class="text-lg font-semibold">🌟 Hey <span id="greeting-child-name"></span>! Ready for some amazing STEM adventures?</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity Card 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Water Play Science</h3>
+                    <p class="text-gray-600 mb-4">Explore buoyancy and water displacement with household items</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 2-5 years</p>
+                        <p><strong>Materials:</strong> Large bowl, water, various objects</p>
+                        <p><strong>Time:</strong> 15-20 minutes</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Plant Growth Experiment</h3>
+                    <p class="text-gray-600 mb-4">Watch seeds sprout and learn about plant life cycles</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 3-6 years</p>
+                        <p><strong>Materials:</strong> Seeds, cotton balls, clear container</p>
+                        <p><strong>Time:</strong> 10 minutes setup, daily observation</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-green-600 hover:text-green-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Magnetic Discovery</h3>
+                    <p class="text-gray-600 mb-4">Explore magnetic properties with safe household magnets</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 2-4 years</p>
+                        <p><strong>Materials:</strong> Magnets, various safe objects</p>
+                        <p><strong>Time:</strong> 15 minutes</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-purple-600 hover:text-purple-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Activity Card 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-orange-600 text-3xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Shadow Play</h3>
+                    <p class="text-gray-600 mb-4">Learn about light and shadows with flashlights</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 1-3 years</p>
+                        <p><strong>Materials:</strong> Flashlight, toys, white wall</p>
+                        <p><strong>Time:</strong> 20 minutes</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-orange-600 hover:text-orange-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Activity Card 5 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 text-3xl mb-4">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Kitchen Scale Fun</h3>
+                    <p class="text-gray-600 mb-4">Compare weights and learn about measurement</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 4-7 years</p>
+                        <p><strong>Materials:</strong> Kitchen scale, various objects</p>
+                        <p><strong>Time:</strong> 15 minutes</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-red-600 hover:text-red-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Activity Card 6 -->
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-teal-600 text-3xl mb-4">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Wind Power</h3>
+                    <p class="text-gray-600 mb-4">Create wind-powered toys and learn about air</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong>Age:</strong> 3-6 years</p>
+                        <p><strong>Materials:</strong> Paper, straws, fan</p>
+                        <p><strong>Time:</strong> 25 minutes</p>
+                    </div>
+                    <a href="#ai-assistant" class="inline-block mt-4 text-teal-600 hover:text-teal-800 font-semibold">
+                        Get detailed instructions <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">Parenting Resources</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Tools and systems to support your parenting journey</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Resource Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Daily Routine Builder</h3>
+                    <p class="text-gray-600 mb-4">Create age-appropriate daily schedules that include STEM learning</p>
+                    <a href="https://www.zerotothree.org/resource/early-learning-activities-for-babies-and-toddlers/" target="_blank" class="inline-block mt-4 text-primary hover:text-primary-dark font-semibold">
+                        Learn more <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Resource Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-secondary text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Development Tracker</h3>
+                    <p class="text-gray-600 mb-4">Monitor your child's STEM skill development milestones</p>
+                    <a href="https://www.cdc.gov/ncbddd/actearly/milestones/index.html" target="_blank" class="inline-block mt-4 text-secondary hover:text-secondary-dark font-semibold">
+                        Learn more <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Resource Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Open Source Learning Materials</h3>
+                    <p class="text-gray-600 mb-4">Curated open source resources organized by STEM categories</p>
+                    <a href="#learning-materials" class="inline-block mt-4 text-accent hover:text-accent-dark font-semibold">
+                        Explore materials <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Resource Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Parent Community</h3>
+                    <p class="text-gray-600 mb-4">Connect with other parents and share STEM activity ideas</p>
+                    <a href="https://www.facebook.com/groups/stemforkids" target="_blank" class="inline-block mt-4 text-purple-600 hover:text-purple-800 font-semibold">
+                        Join community <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Resource Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Seasonal Activities</h3>
+                    <p class="text-gray-600 mb-4">STEM activities that change with the seasons and holidays</p>
+                    <a href="https://www.pbs.org/parents/learn-grow" target="_blank" class="inline-block mt-4 text-green-600 hover:text-green-800 font-semibold">
+                        Explore activities <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Resource Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-red-600 text-3xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Safety Guidelines</h3>
+                    <p class="text-gray-600 mb-4">Essential safety tips for STEM activities with young children</p>
+                    <a href="https://www.safekids.org/safetytips/field_risks/0" target="_blank" class="inline-block mt-4 text-red-600 hover:text-red-800 font-semibold">
+                        Safety tips <i class="fas fa-external-link-alt ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Materials Section -->
+    <section id="learning-materials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">Open Source Learning Materials</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Curated collection of free, open source STEM resources organized by category</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Left Column: Categories and Links -->
+                <div class="lg:col-span-2">
+                    <div class="space-y-8">
+                        <!-- Sensory Learning -->
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-hand-holding-heart text-2xl text-blue-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Sensory Learning</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://www.sensoryplay.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-blue-700">Sensory Play Ideas</div>
+                                    <div class="text-sm text-gray-600">Tactile, visual, and auditory sensory activities</div>
+                                </a>
+                                <a href="https://www.theottoolbox.com/sensory-activities/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-blue-700">OT Toolbox Sensory</div>
+                                    <div class="text-sm text-gray-600">Occupational therapy approved sensory activities</div>
+                                </a>
+                                <a href="https://www.andnextcomesl.com/p/sensory-activities.html" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-blue-700">And Next Comes L</div>
+                                    <div class="text-sm text-gray-600">Autism-friendly sensory play resources</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Math & Numbers -->
+                        <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calculator text-2xl text-green-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Math & Numbers</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://www.mathlearningcenter.org/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-green-700">Math Learning Center</div>
+                                    <div class="text-sm text-gray-600">Free math apps and activities for young learners</div>
+                                </a>
+                                <a href="https://www.khanacademy.org/early-math" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-green-700">Khan Academy Early Math</div>
+                                    <div class="text-sm text-gray-600">Video lessons and interactive exercises</div>
+                                </a>
+                                <a href="https://www.mathsisfun.com/early-math.html" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-green-700">Math Is Fun</div>
+                                    <div class="text-sm text-gray-600">Simple explanations and games</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Science & Nature -->
+                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-flask text-2xl text-purple-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Science & Nature</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://www.sciencebuddies.org/stem-activities" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-purple-700">Science Buddies</div>
+                                    <div class="text-sm text-gray-600">Hands-on science experiments and projects</div>
+                                </a>
+                                <a href="https://www.nature.org/en-us/get-involved/how-to-help/volunteer-and-attend-events/connect-with-kids/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-purple-700">Nature Conservancy Kids</div>
+                                    <div class="text-sm text-gray-600">Nature exploration and environmental education</div>
+                                </a>
+                                <a href="https://www.audubon.org/get-outside/activities" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-purple-700">Audubon Society</div>
+                                    <div class="text-sm text-gray-600">Bird watching and nature activities</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Technology & Engineering -->
+                        <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-cogs text-2xl text-orange-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Technology & Engineering</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://scratch.mit.edu/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-orange-700">Scratch Programming</div>
+                                    <div class="text-sm text-gray-600">Visual programming for kids by MIT</div>
+                                </a>
+                                <a href="https://www.code.org/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-orange-700">Code.org</div>
+                                    <div class="text-sm text-gray-600">Computer science education for all ages</div>
+                                </a>
+                                <a href="https://www.engineeringforkids.com/at-home-activities/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-orange-700">Engineering for Kids</div>
+                                    <div class="text-sm text-gray-600">Engineering activities and challenges</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Art & Creativity -->
+                        <div class="bg-gradient-to-r from-pink-50 to-pink-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-palette text-2xl text-pink-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Art & Creativity</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://www.artfulparent.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-pink-700">The Artful Parent</div>
+                                    <div class="text-sm text-gray-600">Creative art activities for children</div>
+                                </a>
+                                <a href="https://www.deepspacesparkle.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-pink-700">Deep Space Sparkle</div>
+                                    <div class="text-sm text-gray-600">Art lesson plans and projects</div>
+                                </a>
+                                <a href="https://www.kinderart.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-pink-700">KinderArt</div>
+                                    <div class="text-sm text-gray-600">Free art lesson plans and activities</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Movement & Physical -->
+                        <div class="bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-running text-2xl text-teal-600 mr-3"></i>
+                                <h3 class="text-xl font-bold text-dark">Movement & Physical</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <a href="https://www.gonoodle.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-teal-700">GoNoodle</div>
+                                    <div class="text-sm text-gray-600">Movement videos and brain breaks</div>
+                                </a>
+                                <a href="https://www.cosmickids.com/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-teal-700">Cosmic Kids Yoga</div>
+                                    <div class="text-sm text-gray-600">Yoga and mindfulness for children</div>
+                                </a>
+                                <a href="https://www.actionforhealthykids.org/activity/" target="_blank" class="block p-3 bg-white rounded-lg hover:shadow-md transition-shadow">
+                                    <div class="font-semibold text-teal-700">Action for Healthy Kids</div>
+                                    <div class="text-sm text-gray-600">Physical activity resources and games</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Fun Learning Image -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24">
+                        <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white text-center">
+                            <div class="text-6xl mb-4">🎓</div>
+                            <h3 class="text-2xl font-bold mb-4">Learning is Fun!</h3>
+                            <p class="text-blue-100 mb-6">Discover free, open source resources to make STEM learning exciting and accessible for your child.</p>
+                            <div class="space-y-3 text-left">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span class="text-sm">All resources are completely free</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span class="text-sm">No registration required</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span class="text-sm">Age-appropriate content</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-check-circle text-green-300"></i>
+                                    <span class="text-sm">Parent-approved activities</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white p-6 rounded-xl shadow-lg">
+                            <h4 class="text-lg font-bold text-dark mb-4">Quick Tips</h4>
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex items-start space-x-2">
+                                    <i class="fas fa-lightbulb text-yellow-500 mt-1"></i>
+                                    <span>Start with activities that match your child's current interests</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i class="fas fa-clock text-blue-500 mt-1"></i>
+                                    <span>Keep sessions short (10-15 minutes) for young children</span>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <i class="fas fa-heart text-red-500 mt-1"></i>
+                                    <span>Make it fun - learning should feel like play!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section id="ai-assistant" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">Ask STEM Sprouts AI</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Get personalized STEM activity recommendations and parenting advice powered by AI</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl text-white mb-8">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-robot text-3xl mr-4"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold">AI-Powered STEM Assistant</h3>
+                            <p class="text-blue-100">Ask me anything about STEM activities, child development, or parenting!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Questions -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-dark mb-4">Quick Questions:</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="askQuestion('What\'s a good STEM activity for a 2-year-old?')" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm transition-colors">What's a good STEM activity for a 2-year-old?</button>
+                        <button onclick="askQuestion('How can I make science fun for my preschooler?')" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm transition-colors">How can I make science fun for my preschooler?</button>
+                        <button onclick="askQuestion('What materials do I need for home STEM activities?')" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm transition-colors">What materials do I need for home STEM activities?</button>
+                        <button onclick="askQuestion('How do I explain gravity to a 4-year-old?')" class="bg-gray-100 hover:bg-gray-2 px-4 py-2 rounded-lg text-sm transition-colors">How do I explain gravity to a 4-year-old?</button>
+                    </div>
+                    <div id="personalized-questions" class="hidden mt-4">
+                        <h5 class="text-sm font-semibold text-gray-700 mb-2">Personalized for <span id="personalized-child-name"></span>:</h5>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="askPersonalizedQuestion('age')" class="bg-primary text-white px-4 py-2 rounded-lg text-sm transition-colors">What STEM activities are perfect for my <span id="age-question"></span> child?</button>
+                            <button onclick="askPersonalizedQuestion('interests')" class="bg-secondary text-white px-4 py-2 rounded-lg text-sm transition-colors">Show me <span id="interests-question"></span> activities!</button>
+                            <button onclick="askPersonalizedQuestion('custom')" class="bg-accent text-white px-4 py-2 rounded-lg text-sm transition-colors">Create a custom activity for <span id="custom-child-name"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Interface -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <div id="chat-messages" class="space-y-4 mb-6 max-h-96 overflow-y-auto">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-secondary text-white p-3 rounded-full">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm max-w-xs">
+                                <p id="ai-greeting">Hello! I'm your STEM Sprouts AI assistant. How can I help you with STEM activities or parenting questions today?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3">
+                        <input type="text" id="question-input" placeholder="Ask me about STEM activities..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <button onclick="askQuestion(document.getElementById('question-input').value)" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEM Video Assistant Section -->
+    <section id="stem-video-assistant" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">STEM Video Assistant</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Create personalized STEM activity videos with AI-generated scripts and voice synthesis</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="bg-gradient-to-r from-primary to-secondary p-6 rounded-xl text-white mb-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-video text-3xl mr-4"></i>
+                            <div>
+                                <h3 class="text-2xl font-bold">AI-Powered Video Creation</h3>
+                                <p class="text-blue-100">Generate custom STEM activity videos with step-by-step instructions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="chat" class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div id="log" class="min-h-32 bg-white rounded-lg p-4 mb-4 text-gray-700 font-mono text-sm"></div>
+                        <form id="video-form" class="flex gap-3">
+                            <input id="q" type="text" placeholder="Ask for a video (e.g., 'Make a balloon rocket for ages 6–10')" 
+                                   class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-700">
+                            <button id="talk" type="button" title="Hold to talk" 
+                                    class="px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                                🎤
+                            </button>
+                            <button id="go" type="submit" 
+                                    class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-semibold">
+                                Create Video
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="scriptBox" class="mt-6 bg-white border border-gray-200 rounded-xl p-6 hidden">
+                        <h3 class="text-xl font-bold text-dark mb-4">Generated Script</h3>
+                        <pre id="scriptOut" class="bg-gray-50 p-4 rounded-lg text-gray-700 font-mono text-sm whitespace-pre-wrap"></pre>
+                        <button id="renderBtn" class="mt-4 px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary-dark transition-colors font-semibold">
+                            Render Video
+                        </button>
+                    </div>
+
+                    <div id="result" class="mt-6 bg-white border border-gray-200 rounded-xl p-6 hidden">
+                        <h3 class="text-xl font-bold text-dark mb-4">Generated Video</h3>
+                        <video id="vid" controls playsinline class="w-full rounded-lg bg-black"></video>
+                        <pre id="logs" class="mt-4 bg-gray-50 p-4 rounded-lg text-gray-700 font-mono text-sm whitespace-pre-wrap"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">About STEM Sprouts</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Making STEM accessible and fun for the youngest learners through AI-powered parenting support.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">Our Mission</h3>
+                    <p class="text-gray-600 mb-6">We believe every child is born a scientist, engineer, and mathematician. Our mission is to nurture these natural curiosities through age-appropriate, engaging STEM activities that parents can easily implement at home.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Age-appropriate activities for 6 months to 8 years</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">AI-powered personalization based on your child's interests</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Safe, household materials only</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-gray-700">Evidence-based learning approaches</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h4 class="text-xl font-bold text-dark mb-4">Why STEM for Toddlers?</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-primary text-white p-2 rounded-full mt-1">
+                                <i class="fas fa-brain text-sm"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-dark">Cognitive Development</h5>
+                                <p class="text-gray-600 text-sm">Builds critical thinking and problem-solving skills</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-secondary text-white p-2 rounded-full mt-1">
+                                <i class="fas fa-eye text-sm"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-dark">Curiosity & Wonder</h5>
+                                <p class="text-gray-600 text-sm">Encourages natural exploration and discovery</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-accent text-white p-2 rounded-full mt-1">
+                                <i class="fas fa-hands text-sm"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-dark">Hands-on Learning</h5>
+                                <p class="text-gray-600 text-sm">Develops fine motor skills and coordination</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-dark mb-4">Get in Touch</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions or suggestions? We'd love to hear from you!</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary text-xl"></i>
+                            <a href="mailto:hello@stemsprouts.com" class="text-gray-700 hover:text-primary">hello@stemsprouts.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-primary text-xl"></i>
+                            <a href="tel:+1-555-STEM-123" class="text-gray-700 hover:text-primary">+1 (555) STEM-123</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                            <span class="text-gray-700">San Francisco, CA</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-dark mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://facebook.com/stemsprouts" target="_blank" class="text-primary hover:text-primary-dark text-2xl">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com/stemsprouts" target="_blank" class="text-primary hover:text-primary-dark text-2xl">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/stemsprouts" target="_blank" class="text-primary hover:text-primary-dark text-2xl">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://youtube.com/stemsprouts" target="_blank" class="text-primary hover:text-primary-dark text-2xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h4 class="text-xl font-bold text-dark mb-4">Send us a Message</h4>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-seedling text-2xl text-secondary"></i>
+                        <span class="text-xl font-display font-bold">STEM Sprouts</span>
+                    </div>
+                    <p class="text-gray-300">Making STEM accessible and fun for the youngest learners through AI-powered parenting support.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#activities" class="text-gray-300 hover:text-white transition-colors">Activities</a></li>
+                        <li><a href="#resources" class="text-gray-300 hover:text-white transition-colors">Resources</a></li>
+                        <li><a href="#learning-materials" class="text-gray-300 hover:text-white transition-colors">Learning Materials</a></li>
+                        <li><a href="#ai-assistant" class="text-gray-300 hover:text-white transition-colors">AI Assistant</a></li>
+                        <li><a href="#stem-video-assistant" class="text-gray-300 hover:text-white transition-colors">Video Creator</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.nsta.org/" target="_blank" class="text-gray-300 hover:text-white transition-colors">NSTA Resources</a></li>
+                        <li><a href="https://www.pbs.org/parents/learn-grow" target="_blank" class="text-gray-300 hover:text-white transition-colors">PBS Parents</a></li>
+                        <li><a href="https://www.sciencebuddies.org/" target="_blank" class="text-gray-300 hover:text-white transition-colors">Science Buddies</a></li>
+                        <li><a href="https://www.exploratorium.edu/" target="_blank" class="text-gray-300 hover:text-white transition-colors">Exploratorium</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-4">Get weekly STEM activity ideas delivered to your inbox!</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-gray-700 text-white rounded-l-lg focus:outline-none">
+                        <button class="bg-secondary text-white px-4 py-2 rounded-r-lg hover:bg-secondary-dark transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 STEM Sprouts. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // AI Chat functionality
+        async function askQuestion(question) {
+            if (!question.trim()) return;
+            
+            // Add user message to chat
+            addMessage('user', question);
+            
+            // Clear input
+            document.getElementById('question-input').value = '';
+            
+            // Show typing indicator
+            const typingId = addTypingIndicator();
+            
+            try {
+                // Call your ChatGPT API endpoint
+                const response = await fetch('/api/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        question: question,
+                        child_age: childProfile ? childProfile.age : '2-5',
+                        child_name: childProfile ? childProfile.name : '',
+                        child_interests: childProfile ? childProfile.interests : []
+                    })
+                });
+                
+                if (response.ok) {
+                    const reader = response.body.getReader();
+                    let fullResponse = '';
+                    
+                    while (true) {
+                        const { done, value } = await reader.read();
+                        if (done) break;
+                        
+                        const chunk = new TextDecoder().decode(value);
+                        fullResponse += chunk;
+                        
+                        // Update the typing indicator with streaming response
+                        updateTypingIndicator(typingId, fullResponse);
+                    }
+                    
+                    // Remove typing indicator and add final response
+                    removeTypingIndicator(typingId);
+                    addMessage('assistant', fullResponse);
+                } else {
+                    throw new Error('API request failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                removeTypingIndicator(typingId);
+                addMessage('assistant', 'Sorry, I encountered an error. Please try again later.');
+            }
+        }
+
+        function addMessage(sender, message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start space-x-3';
+            
+            const iconDiv = document.createElement('div');
+            iconDiv.className = sender === 'user' ? 'bg-primary text-white p-3 rounded-full' : 'bg-secondary text-white p-3 rounded-full';
+            iconDiv.innerHTML = sender === 'user' ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'bg-white p-3 rounded-lg shadow-sm max-w-xs';
+            messageContent.innerHTML = `<p>${message}</p>`;
+            
+            messageDiv.appendChild(iconDiv);
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const chatMessages = document.getElementById('chat-messages');
+            const typingDiv = document.createElement('div');
+            const typingId = 'typing-' + Date.now();
+            typingDiv.id = typingId;
+            typingDiv.className = 'flex items-start space-x-3';
+            
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'bg-secondary text-white p-3 rounded-full';
+            iconDiv.innerHTML = '<i class="fas fa-robot"></i>';
+            
+            const typingContent = document.createElement('div');
+            typingContent.className = 'bg-white p-3 rounded-lg shadow-sm max-w-xs';
+            typingContent.innerHTML = '<p><i class="fas fa-circle animate-pulse"></i> <i class="fas fa-circle animate-pulse" style="animation-delay: 0.2s"></i> <i class="fas fa-circle animate-pulse" style="animation-delay: 0.4s"></i></p>';
+            
+            typingDiv.appendChild(iconDiv);
+            typingDiv.appendChild(typingContent);
+            chatMessages.appendChild(typingDiv);
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return typingId;
+        }
+
+        function updateTypingIndicator(typingId, text) {
+            const typingDiv = document.getElementById(typingId);
+            if (typingDiv) {
+                const messageContent = typingDiv.querySelector('div:last-child');
+                messageContent.innerHTML = `<p>${text}</p>`;
+            }
+        }
+
+        function removeTypingIndicator(typingId) {
+            const typingDiv = document.getElementById(typingId);
+            if (typingDiv) {
+                typingDiv.remove();
+            }
+        }
+
+        // Child personalization functionality
+        let childProfile = JSON.parse(localStorage.getItem('childProfile')) || null;
+
+        function updatePersonalization() {
+            if (childProfile) {
+                // Update activities section
+                document.getElementById('personalized-activities-title').textContent = `STEM Activities for ${childProfile.name}`;
+                document.getElementById('personalized-activities-subtitle').textContent = `Age-appropriate activities specially curated for ${childProfile.name} (${childProfile.age})`;
+                document.getElementById('personalized-greeting').classList.remove('hidden');
+                document.getElementById('greeting-child-name').textContent = childProfile.name;
+                
+                // Update AI assistant greeting
+                document.getElementById('ai-greeting').textContent = `Hello ${childProfile.name}! I'm your STEM Sprouts AI assistant. How can I help you with STEM activities or parenting questions today?`;
+                
+                // Update child setup section
+                document.getElementById('child-setup').style.display = 'none';
+                
+                // Show profile link
+                document.getElementById('profile-link').classList.remove('hidden');
+                
+                // Update navigation to show child's name
+                const navTitle = document.querySelector('.text-xl.font-display.font-bold.text-dark');
+                if (navTitle) {
+                    navTitle.innerHTML = `<span class="text-secondary">${childProfile.name}'s</span> STEM Sprouts`;
+                }
+                
+                // Add personalized touches throughout the page
+                addPersonalizedElements();
+            }
+        }
+
+        function addPersonalizedElements() {
+            // Add personalized activity recommendations based on interests
+            if (childProfile.interests && childProfile.interests.length > 0) {
+                const interestsText = childProfile.interests.join(', ');
+                const activitiesSection = document.getElementById('activities');
+                if (activitiesSection) {
+                    const interestBanner = document.createElement('div');
+                    interestBanner.className = 'mb-8 p-4 bg-gradient-to-r from-accent to-yellow-400 rounded-xl text-white text-center';
+                    interestBanner.innerHTML = `
+                        <p class="text-lg font-semibold">🎯 Based on ${childProfile.name}'s interests: ${interestsText}</p>
+                    `;
+                    activitiesSection.insertBefore(interestBanner, activitiesSection.firstChild);
+                }
+            }
+            
+            // Update personalized questions in AI assistant
+            updatePersonalizedQuestions();
+        }
+
+        function updatePersonalizedQuestions() {
+            if (childProfile) {
+                document.getElementById('personalized-questions').classList.remove('hidden');
+                document.getElementById('personalized-child-name').textContent = childProfile.name;
+                document.getElementById('age-question').textContent = childProfile.age;
+                document.getElementById('interests-question').textContent = childProfile.interests.join(', ');
+                document.getElementById('custom-child-name').textContent = childProfile.name;
+            }
+        }
+
+        function askPersonalizedQuestion(type) {
+            let question = '';
+            
+            switch(type) {
+                case 'age':
+                    question = `What are the best STEM activities for a ${childProfile.age} child like ${childProfile.name}?`;
+                    break;
+                case 'interests':
+                    const interestsText = childProfile.interests.join(', ');
+                    question = `Can you suggest STEM activities related to ${childProfile.name}'s interests in ${interestsText}?`;
+                    break;
+                case 'custom':
+                    question = `Create a unique, personalized STEM activity for ${childProfile.name} (${childProfile.age}) that combines learning with fun!`;
+                    break;
+            }
+            
+            if (question) {
+                askQuestion(question);
+            }
+        }
+
+        // Child setup form submission
+        document.getElementById('child-setup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const childName = document.getElementById('child-name').value.trim();
+            const childAge = document.getElementById('child-age').value;
+            const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
+            
+            if (!childName || !childAge) {
+                alert('Please enter your child\'s name and age.');
+                return;
+            }
+            
+            // Save child profile
+            childProfile = {
+                name: childName,
+                age: childAge,
+                interests: interests,
+                setupDate: new Date().toISOString()
+            };
+            
+            localStorage.setItem('childProfile', JSON.stringify(childProfile));
+            
+            // Show welcome message
+            document.getElementById('welcome-child-name').textContent = childName;
+            document.getElementById('personalized-welcome').classList.remove('hidden');
+            
+            // Update the entire page with personalization
+            setTimeout(() => {
+                updatePersonalization();
+                // Smooth scroll to activities
+                document.getElementById('activities').scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        });
+
+        // Profile management
+        document.getElementById('profile-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showProfileModal();
+        });
+
+        function showProfileModal() {
+            // Create modal for profile management
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-3">👶</div>
+                        <h3 class="text-2xl font-bold text-dark">${childProfile.name}'s Profile</h3>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="edit-child-name" value="${childProfile.name}" 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                            <select id="edit-child-age" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                <option value="6-12 months" ${childProfile.age === '6-12 months' ? 'selected' : ''}>6-12 months</option>
+                                <option value="1-2 years" ${childProfile.age === '1-2 years' ? 'selected' : ''}>1-2 years</option>
+                                <option value="2-3 years" ${childProfile.age === '2-3 years' ? 'selected' : ''}>2-3 years</option>
+                                <option value="3-4 years" ${childProfile.age === '3-4 years' ? 'selected' : ''}>3-4 years</option>
+                                <option value="4-5 years" ${childProfile.age === '4-5 years' ? 'selected' : ''}>4-5 years</option>
+                                <option value="5-6 years" ${childProfile.age === '5-6 years' ? 'selected' : ''}>5-6 years</option>
+                                <option value="6-7 years" ${childProfile.age === '6-7 years' ? 'selected' : ''}>6-7 years</option>
+                                <option value="7-8 years" ${childProfile.age === '7-8 years' ? 'selected' : ''}>7-8 years</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Interests</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                ${['animals', 'space', 'nature', 'machines', 'water', 'colors', 'music', 'building'].map(interest => `
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="checkbox" value="${interest}" ${childProfile.interests.includes(interest) ? 'checked' : ''} class="text-primary focus:ring-primary">
+                                        <span class="text-sm text-gray-700">${getInterestEmoji(interest)} ${interest.charAt(0).toUpperCase() + interest.slice(1)}</span>
+                                    </label>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <button onclick="updateProfile()" class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary-dark transition-colors">
+                            Update Profile
+                        </button>
+                        <button onclick="resetProfile()" class="flex-1 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
+                            Reset Profile
+                        </button>
+                    </div>
+                    
+                    <button onclick="closeProfileModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        function getInterestEmoji(interest) {
+            const emojis = {
+                'animals': '🐾', 'space': '🚀', 'nature': '🌿', 'machines': '⚙️',
+                'water': '💧', 'colors': '🎨', 'music': '🎵', 'building': '🏗️'
+            };
+            return emojis[interest] || '🌟';
+        }
+
+        function updateProfile() {
+            const newName = document.getElementById('edit-child-name').value.trim();
+            const newAge = document.getElementById('edit-child-age').value;
+            const newInterests = Array.from(document.querySelectorAll('#edit-child-age').parentElement.parentElement.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            if (!newName) {
+                alert('Please enter a name.');
+                return;
+            }
+            
+            childProfile = {
+                ...childProfile,
+                name: newName,
+                age: newAge,
+                interests: newInterests,
+                lastUpdated: new Date().toISOString()
+            };
+            
+            localStorage.setItem('childProfile', JSON.stringify(childProfile));
+            updatePersonalization();
+            closeProfileModal();
+        }
+
+        function resetProfile() {
+            if (confirm('Are you sure you want to reset the profile? This will remove all personalization.')) {
+                localStorage.removeItem('childProfile');
+                childProfile = null;
+                location.reload();
+            }
+        }
+
+        function closeProfileModal() {
+            const modal = document.querySelector('.fixed.inset-0.bg-black.bg-opacity-50');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Check for existing profile on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (childProfile) {
+                updatePersonalization();
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Enter key support for chat input
+        document.getElementById('question-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                askQuestion(this.value);
+            }
+        });
+
+        // STEM Video Assistant functionality
+        const API_BASE = ''; // Set to your backend URL if different
+        
+        document.getElementById('video-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const question = document.getElementById('q').value.trim();
+            if (!question) return;
+            
+            // Show loading state
+            document.getElementById('log').textContent = 'Generating video script...';
+            document.getElementById('scriptBox').classList.add('hidden');
+            document.getElementById('result').classList.add('hidden');
+            
+            try {
+                // Generate script using your backend
+                const scriptResponse = await fetch(API_BASE + '/api/generate-script', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: question })
+                });
+                
+                if (scriptResponse.ok) {
+                    const scriptData = await scriptResponse.json();
+                    document.getElementById('scriptOut').textContent = scriptData.script;
+                    document.getElementById('scriptBox').classList.remove('hidden');
+                    document.getElementById('log').textContent = 'Script generated! Click "Render Video" to create the video.';
+                } else {
+                    throw new Error('Failed to generate script');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('log').textContent = 'Error generating script. Please try again.';
+            }
+        });
+        
+        document.getElementById('renderBtn').addEventListener('click', async function() {
+            const script = document.getElementById('scriptOut').textContent;
+            if (!script) return;
+            
+            document.getElementById('log').textContent = 'Rendering video... This may take a few minutes.';
+            
+            try {
+                // Render video using your backend
+                const videoResponse = await fetch(API_BASE + '/api/render-video', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ script: script })
+                });
+                
+                if (videoResponse.ok) {
+                    const videoData = await videoResponse.json();
+                    document.getElementById('vid').src = videoData.videoUrl;
+                    document.getElementById('result').classList.remove('hidden');
+                    document.getElementById('log').textContent = 'Video rendered successfully!';
+                } else {
+                    throw new Error('Failed to render video');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('log').textContent = 'Error rendering video. Please try again.';
+            }
+        });
+        
+        // Voice input functionality
+        let mediaRecorder;
+        let audioChunks = [];
+        
+        document.getElementById('talk').addEventListener('mousedown', async function() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+                
+                mediaRecorder.ondataavailable = (event) => {
+                    audioChunks.push(event.data);
+                };
+                
+                mediaRecorder.onstop = async () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    // Here you would send the audio to your speech-to-text service
+                    // For now, we'll just show a placeholder
+                    document.getElementById('log').textContent = 'Voice input received! (Speech-to-text integration needed)';
+                };
+                
+                mediaRecorder.start();
+                this.textContent = '🔴';
+                this.style.background = '#dc2626';
+            } catch (error) {
+                console.error('Error accessing microphone:', error);
+                document.getElementById('log').textContent = 'Error accessing microphone. Please check permissions.';
+            }
+        });
+        
+        document.getElementById('talk').addEventListener('mouseup', function() {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+                this.textContent = '🎤';
+                this.style.background = '#4b5563';
+            }
+        });
+        
+        document.getElementById('talk').addEventListener('mouseleave', function() {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+                this.textContent = '🎤';
+                this.style.background = '#4b5563';
+            }
+        });
+    </script>
+</body>
+</html> 
